@@ -1,0 +1,8 @@
+{
+  "name": "UniApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue",
+  "id": "1dabd80d"
+}
