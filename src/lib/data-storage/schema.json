@@ -1,0 +1,33 @@
+{
+  "database": "uni-db",
+  "version": 2,
+  "encrypted": false,
+  "mode": "full",
+  "tables": [
+    {
+      "name": "requests",
+      "schema": [
+        { "column": "id", "value": "INTEGER PRIMARY KEY NOT NULL" },
+        { "column": "title", "value": "VARCHAR(255) NOT NULL" },
+        { "column": "body", "value": "TEXT NOT NULL" },
+        { "column": "position", "value": "VARCHAR(255)" },
+        { "column": "created_at", "value": "DATE DEFAULT CURRENT_DATE" }
+      ],
+      "values": []
+    },
+    {
+      "name": "comments",
+      "schema": [
+        { "column": "id", "value": "INTEGER PRIMARY KEY NOT NULL" },
+        { "column": "username", "value": "VARCHAR(30) NOT NULL" },
+        { "column": "request_id", "value": "INTEGER NOT NULL" },
+        { "column": "text", "value": "TEXT NOT NULL" },
+        { "column": "created_at", "value": "DATE DEFAULT CURRENT_DATE" },
+        {
+          "foreignkey": "request_id",
+          "value": "REFERENCES requests(id)"
+        }
+      ]
+    }
+  ]
+}
